@@ -30,22 +30,22 @@ export default async function InfoDetailPage({ params }: { params: Promise<{ id:
   }
 
   const isEvent = item.category === "행사";
-  const themeColor = isEvent ? "orange" : "amber";
-  const bgColor = isEvent ? "bg-orange-500" : "bg-amber-500";
-  const hoverColor = isEvent ? "hover:bg-orange-600" : "hover:bg-amber-600";
-  const textColor = isEvent ? "text-orange-700" : "text-amber-700";
-  const subBgColor = isEvent ? "bg-orange-50" : "bg-amber-50";
-  const subBorderColor = isEvent ? "border-orange-100" : "border-amber-100";
+  const themeColor = isEvent ? "pink" : "rose";
+  const bgColor = isEvent ? "bg-pink-500" : "bg-rose-500";
+  const hoverColor = isEvent ? "hover:bg-pink-600" : "hover:bg-rose-600";
+  const textColor = isEvent ? "text-pink-700" : "text-rose-700";
+  const subBgColor = isEvent ? "bg-pink-50" : "bg-rose-50";
+  const subBorderColor = isEvent ? "border-pink-100" : "border-rose-100";
 
   return (
-    <div className="min-h-screen bg-amber-50 font-sans text-slate-800">
+    <div className="min-h-screen bg-pink-50 font-sans text-slate-800">
       {/* 상단 네비게이션 */}
       <nav className="border-b border-slate-100 py-4 px-4 sticky top-0 bg-white/80 backdrop-blur-md z-20">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-slate-500 hover:text-orange-600 transition-colors flex items-center gap-1">
+          <Link href="/" className="text-slate-500 hover:text-pink-600 transition-colors flex items-center gap-1">
             <span>←</span> 목록으로 돌아가기
           </Link>
-          <Link href="/" className="font-bold text-orange-500 text-xl">🏠 홈</Link>
+          <Link href="/" className="font-bold text-pink-500 text-xl">🏠 홈</Link>
         </div>
       </nav>
 
@@ -54,7 +54,7 @@ export default async function InfoDetailPage({ params }: { params: Promise<{ id:
           {/* 헤더 섹션 */}
           <header className={`p-8 md:p-12 ${subBgColor} border-b ${subBorderColor}`}>
             <div className="flex items-center gap-2 mb-4">
-              <span className={`px-3 py-1 rounded-full text-xs font-bold ${isEvent ? "bg-orange-200 text-orange-800" : "bg-amber-200 text-amber-800"}`}>
+              <span className={`px-3 py-1 rounded-full text-xs font-bold ${isEvent ? "bg-pink-200 text-pink-800" : "bg-rose-200 text-rose-800"}`}>
                 {item.category}
               </span>
               <span className="text-slate-400 text-sm">

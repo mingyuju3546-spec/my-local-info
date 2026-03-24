@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import Footer from "@/components/Footer";
+import BlossomBackground from "@/components/BlossomBackground";
 
 export default function RootLayout({
   children,
@@ -27,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen relative`}
       >
-        <main className="flex-grow">
+        <BlossomBackground />
+        <main className="flex-grow relative z-10">
           {children}
         </main>
         <Footer />

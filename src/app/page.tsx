@@ -113,7 +113,7 @@ function Card({ item, color }: { item: InfoItem; color: "orange" | "amber" }) {
           {item.startDate === item.endDate ? item.startDate : `${item.startDate} ~ ${item.endDate}`}
         </span>
       </div>
-      <Link href={`/info/${item.id}`}>
+      <Link href="/blog">
         <h3 className="text-xl font-bold mb-2 text-slate-800 group-hover:text-pink-600 transition-colors cursor-pointer">{item.name}</h3>
       </Link>
       <div className="space-y-2 mb-6 flex-grow">
@@ -128,7 +128,7 @@ function Card({ item, color }: { item: InfoItem; color: "orange" | "amber" }) {
         </p>
       </div>
       <Link
-        href={`/info/${item.id}`}
+        href="/blog"
         className={`mt-auto text-center py-3 rounded-xl text-white font-bold text-sm transition-colors ${btnColor}`}
       >
         상세 보기

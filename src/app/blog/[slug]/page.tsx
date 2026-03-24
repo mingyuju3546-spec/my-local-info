@@ -24,8 +24,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <nav className="border-b border-slate-200 py-5 px-4 sticky top-0 bg-white/90 backdrop-blur-xl z-20 shadow-sm">
+    <div className="min-h-screen font-sans text-slate-900">
+      <nav className="border-b border-slate-200 py-5 px-4 sticky top-0 bg-white/90 backdrop-blur-xl z-10 shadow-sm">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
           <Link href="/blog" className="text-slate-500 hover:text-orange-600 font-semibold transition-all flex items-center gap-2 group">
             <span className="transition-transform group-hover:-translate-x-1">←</span> 블로그 목록

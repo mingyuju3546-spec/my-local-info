@@ -22,9 +22,9 @@ export default function Home() {
   const recentBlogs = allBlogs.slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-pink-50 font-sans text-slate-800">
+    <div className="min-h-screen font-sans text-slate-800">
       {/* 상단 헤더 */}
-      <header className="bg-gradient-to-b from-pink-400 to-pink-600 text-white py-10 px-4 shadow-lg sticky top-0 z-20">
+      <header className="bg-gradient-to-b from-pink-400 to-pink-600 text-white py-10 px-4 shadow-lg sticky top-0 z-10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h1 className="text-4xl font-extrabold mb-2 tracking-tight">🏠 김해시 생활 정보</h1>

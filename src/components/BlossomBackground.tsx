@@ -25,31 +25,31 @@ export default function BlossomBackground() {
   const [petals, setPetals] = useState<Array<{ id: number; style: React.CSSProperties }>>([]);
 
   useEffect(() => {
-    const petalCount = 25; // 벚꽃 잎의 수
+    const petalCount = 100; // 벚꽃 잎의 수 대폭 증가
     const newPetals = Array.from({ length: petalCount }).map((_, i) => {
-      const left = Math.random() * 100; // 랜덤 가로 위치 (0%~100%)
-      const duration = 10 + Math.random() * 15; // 낙하 시간 (10s~25s)
-      const delay = Math.random() * -20; // 시작 지연 (이미 화면에 흩뿌려진 느낌을 위해 음수 사용)
-      const size = 10 + Math.random() * 15; // 꽃잎 크기 (10px~25px)
-      const rotate = Math.random() * 360; // 초기 회전각
-      const swayDuration = 3 + Math.random() * 4; // 좌우 흔들림 시간 (3s~7s)
-      const opacity = 0.5 + Math.random() * 0.4; // 투명도 (0.5~0.9)
+      const left = -10 + Math.random() * 120; // 화면 밖에서도 시작하도록 범위 확장
+      const duration = 15 + Math.random() * 20; // 더 천천히 떨어지게 조정
+      const delay = Math.random() * -30;
+      const size = 12 + Math.random() * 20; 
+      const rotate = Math.random() * 360;
+      const swayDuration = 5 + Math.random() * 6;
+      const opacity = 0.6 + Math.random() * 0.3; 
 
-      // 벚꽃 색상 랜덤 선택 (부드러운 핑크 계열)
-      const colors = ["#ffc0cb", "#ffb6c1", "#ff99aa", "#ffecf1"];
+      const colors = ["#ffc0cb", "#ffb6c1", "#ff99aa", "#ffb2d0", "#ffdee6"];
       const color = colors[Math.floor(Math.random() * colors.length)];
 
       return {
         id: i,
         style: {
           left: `${left}%`,
-          top: `-5%`,
+          top: `-10%`,
           fontSize: `${size}px`,
           color: color,
           opacity: opacity,
           width: `${size}px`,
           height: `${size}px`,
-          transform: `rotate(${rotate}deg)`,
+          transform: `rotate(${rotate}deg) rotateY(${Math.random() * 360}deg)`,
+          filter: "drop-shadow(0 0 3px rgba(255,105,180,0.3))", // 그림자 강화
           animation: `
             fall ${duration}s linear infinite ${delay}s,
             sway ${swayDuration}s ease-in-out infinite alternate
@@ -61,7 +61,7 @@ export default function BlossomBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 pointer-events-none z-[99] overflow-hidden" aria-hidden="true">
       {petals.map((petal) => (
         <Petal key={petal.id} id={petal.id} style={petal.style} />
       ))}

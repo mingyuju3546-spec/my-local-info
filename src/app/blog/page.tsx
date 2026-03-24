@@ -5,8 +5,8 @@ export default function BlogListPage() {
   const allPostsData = getSortedPostsData();
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <nav className="border-b border-slate-200 py-5 px-4 sticky top-0 bg-white/90 backdrop-blur-xl z-20 shadow-sm">
+    <div className="min-h-screen font-sans text-slate-900">
+      <nav className="border-b border-slate-200 py-5 px-4 sticky top-0 bg-white/90 backdrop-blur-xl z-10 shadow-sm">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <Link href="/" className="font-extrabold text-slate-900 text-xl tracking-tight">🏠 김해시 정보</Link>
           <div className="flex gap-8">

@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen relative bg-slate-50`}
       >
         <BlossomBackground />
         <main className="flex-grow relative z-10">

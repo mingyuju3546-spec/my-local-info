@@ -9,6 +9,7 @@ export interface PostData {
   title: string;
   date: string;
   summary: string;
+  excerpt: string;
   category: string;
   tags: string[];
   content: string;
@@ -46,6 +47,7 @@ export function getSortedPostsData(): PostData[] {
         title: matterResult.data.title || '제목 없음',
         date: dateValue || '',
         summary: matterResult.data.summary || '',
+        excerpt: matterResult.data.summary || '',
         category: matterResult.data.category || '일반',
         tags: matterResult.data.tags || [],
         content: matterResult.content,
@@ -81,6 +83,7 @@ export function getPostData(slug: string): PostData | null {
     title: matterResult.data.title || '제목 없음',
     date: dateValue || '',
     summary: matterResult.data.summary || '',
+    excerpt: matterResult.data.summary || '',
     category: matterResult.data.category || '일반',
     tags: matterResult.data.tags || [],
     content: matterResult.content,

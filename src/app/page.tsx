@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import infoData from "../../public/data/local-info.json";
-import blogPosts from "../../public/data/blog-posts.json";
+import { getSortedPostsData } from "@/lib/posts";
 
 interface InfoItem {
   id: number;
@@ -18,21 +18,22 @@ interface InfoItem {
 export default function Home() {
   const events = infoData.filter((item) => item.category === "행사");
   const benefits = infoData.filter((item) => item.category === "혜택");
-  const recentBlogs = blogPosts.slice(0, 2);
+  const allBlogs = getSortedPostsData();
+  const recentBlogs = allBlogs.slice(0, 2);
   const lastUpdated = new Date().toLocaleDateString("ko-KR");
 
   return (
-    <div className="min-h-screen bg-pink-100 font-sans text-slate-800">
+    <div className="min-h-screen bg-pink-50 font-sans text-slate-800">
       {/* 상단 헤더 */}
-      <header className="bg-gradient-to-b from-pink-200 to-pink-700 text-white py-8 px-4 shadow-md sticky top-0 z-20">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <header className="bg-gradient-to-b from-pink-400 to-pink-600 text-white py-10 px-4 shadow-lg sticky top-0 z-20">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <h1 className="text-3xl font-bold mb-1">🏠 성남시 생활 정보</h1>
-            <p className="text-white/80 italic text-sm font-medium">우리 동네 축제, 행사부터 꿀맛 같은 혜택까지!</p>
+            <h1 className="text-4xl font-extrabold mb-2 tracking-tight">🏠 김해시 생활 정보</h1>
+            <p className="text-white/90 italic text-base font-medium">우리 동네 축제, 행사부터 꿀맛 같은 혜택까지!</p>
           </div>
           <nav className="flex gap-4">
-            <Link href="/" className="px-4 py-2 bg-white/20 rounded-lg font-bold hover:bg-white/30 transition-colors">홈</Link>
-            <Link href="/blog" className="px-4 py-2 bg-pink-600 rounded-lg font-bold hover:bg-pink-700 transition-colors">블로그</Link>
+            <Link href="/" className="px-5 py-2.5 bg-white/20 rounded-xl font-bold hover:bg-white/30 transition-all backdrop-blur-sm">홈</Link>
+            <Link href="/blog" className="px-5 py-2.5 bg-pink-700 rounded-xl font-bold hover:bg-pink-800 transition-all shadow-md">블로그</Link>
           </nav>
         </div>
       </header>
@@ -75,7 +76,7 @@ export default function Home() {
           </div>
           <div className="space-y-6">
             {recentBlogs.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`} className="group block border-b border-slate-100 last:border-0 pb-6 last:pb-0">
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block border-b border-slate-100 last:border-0 pb-6 last:pb-0">
                 <span className="text-xs text-slate-400 block mb-1">{post.date}</span>
                 <h3 className="text-xl font-bold group-hover:text-pink-600 transition-colors mb-2">{post.title}</h3>
                 <p className="text-sm text-slate-500 line-clamp-1">{post.excerpt}</p>
@@ -90,7 +91,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-2 text-sm">
           <p>데이터 출처: 공공데이터포털 (data.go.kr)</p>
           <p>마지막 업데이트: {lastUpdated}</p>
-          <p className="mt-4 text-xs">© 2024 우리 동네 생활 정보. All rights reserved.</p>
+          <p className="mt-4 text-xs">© 2024 김해시 생활 정보. All rights reserved.</p>
         </div>
       </footer>
     </div>

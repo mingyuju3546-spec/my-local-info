@@ -37,9 +37,9 @@ async function fetchPublicData() {
       .filter(Boolean)
       .join(' ');
 
-  let filtered = rawItems.filter((item) => searchFields(item).includes('성남'));
+  let filtered = rawItems.filter((item) => searchFields(item).includes('김해'));
   if (filtered.length === 0) {
-    filtered = rawItems.filter((item) => searchFields(item).includes('경기'));
+    filtered = rawItems.filter((item) => searchFields(item).includes('경남'));
   }
   if (filtered.length === 0) {
     filtered = rawItems;

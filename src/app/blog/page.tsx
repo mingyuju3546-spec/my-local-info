@@ -8,7 +8,7 @@ export default function BlogListPage() {
     <div className="min-h-screen bg-white">
       <nav className="border-b border-gray-100 py-4 px-4 sticky top-0 bg-white/80 backdrop-blur-md z-20">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-bold text-gray-900 text-xl tracking-tight">🏠 성남시 정보</Link>
+          <Link href="/" className="font-bold text-gray-900 text-xl tracking-tight">🏠 김해시 정보</Link>
           <div className="flex gap-6">
             <Link href="/" className="font-medium text-gray-500 hover:text-gray-900 transition-colors">홈</Link>
             <Link href="/blog" className="font-bold text-orange-600 border-b-2 border-orange-600">블로그</Link>

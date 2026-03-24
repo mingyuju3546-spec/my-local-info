@@ -10,13 +10,11 @@ export default function Footer() {
         
         {/* 방문자 카운터 */}
         <div className="py-2">
-          <a href="https://hits.seeyoufarm.com">
-            <img 
-              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgimhaeinfo.com&count_bg=%23ec4899&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false" 
-              alt="Hits Counter"
-              className="hover:opacity-80 transition-opacity"
-            />
-          </a>
+          <img 
+            src="https://komarev.com/ghpvc/?username=gimhaeinfo-com&color=ff69b4&style=flat-square&label=VISITORS" 
+            alt="Visitors Counter"
+            className="hover:opacity-80 transition-opacity"
+          />
         </div>
 
         <p>마지막 업데이트: {lastUpdated}</p>

@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="py-2">
           <a href="https://hits.seeyoufarm.com">
             <img 
-              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgimhaeinfo.com&count_bg=%23ec4899&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=방문자수&edge_flat=false" 
+              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgimhaeinfo.com&count_bg=%23ec4899&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false" 
               alt="Hits Counter"
               className="hover:opacity-80 transition-opacity"
             />

@@ -24,55 +24,59 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="border-b border-gray-100 py-4 px-4 sticky top-0 bg-white/80 backdrop-blur-md z-20">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <nav className="border-b border-slate-200 py-5 px-4 sticky top-0 bg-white/90 backdrop-blur-xl z-20 shadow-sm">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
-          <Link href="/blog" className="text-gray-500 hover:text-orange-600 transition-colors flex items-center gap-1">
-            <span>←</span> 블로그 목록
+          <Link href="/blog" className="text-slate-500 hover:text-orange-600 font-semibold transition-all flex items-center gap-2 group">
+            <span className="transition-transform group-hover:-translate-x-1">←</span> 블로그 목록
           </Link>
-          <Link href="/" className="font-bold text-gray-900 text-xl">🏠 홈</Link>
+          <Link href="/" className="font-extrabold text-slate-900 text-xl tracking-tight">🏠 홈</Link>
         </div>
       </nav>
 
-      <article className="max-w-3xl mx-auto px-4 py-16">
-      <div className="mb-10 text-center">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <span className="px-3 py-1 text-xs font-semibold text-orange-600 bg-orange-50 rounded-full uppercase tracking-wider">
-            {postData.category}
-          </span>
-          <span className="text-gray-400 text-xs">•</span>
-          <span className="text-gray-400 text-sm">{postData.date}</span>
-        </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">
-          {postData.title}
-        </h1>
-        <div className="flex flex-wrap justify-center gap-2">
-          {postData.tags.map((tag) => (
-            <span key={tag} className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </div>
+      <main className="max-w-3xl mx-auto px-4 py-12 md:py-20">
+        <article className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+          <div className="p-8 md:p-14">
+            <div className="mb-10 text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="px-4 py-1.5 text-xs font-bold text-orange-700 bg-orange-100 rounded-full uppercase tracking-widest">
+                  {postData.category}
+                </span>
+                <span className="text-slate-300 text-xs">•</span>
+                <span className="text-slate-500 font-medium text-sm">{postData.date}</span>
+              </div>
+              <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">
+                {postData.title}
+              </h1>
+              <div className="flex flex-wrap justify-center gap-2">
+                {postData.tags.map((tag) => (
+                  <span key={tag} className="text-sm font-medium text-slate-600 bg-slate-100 px-4 py-1.5 rounded-full hover:bg-slate-200 transition-colors">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-      <div className="prose prose-orange lg:prose-lg mx-auto max-w-none border-t border-gray-100 pt-10">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {postData.content}
-        </ReactMarkdown>
-      </div>
+            <div className="prose prose-slate lg:prose-xl mx-auto max-w-none border-t border-slate-100 pt-12 prose-headings:text-slate-900 prose-p:text-slate-700 prose-p:leading-relaxed prose-strong:text-slate-900 prose-a:text-orange-600 prose-img:rounded-2xl shadow-slate-50">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {postData.content}
+              </ReactMarkdown>
+            </div>
 
-      <div className="mt-16 pt-8 border-t border-gray-100">
-        <Link 
-          href="/blog" 
-          className="inline-flex items-center text-gray-600 hover:text-orange-600 transition-colors font-medium group"
-        >
-          <svg className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          목록으로 돌아가기
-        </Link>
-      </div>
-      </article>
+            <div className="mt-20 pt-10 border-t border-slate-100 flex justify-center">
+              <Link 
+                href="/blog" 
+                className="inline-flex items-center px-8 py-3 bg-slate-900 text-white rounded-2xl hover:bg-orange-600 transition-all font-bold group shadow-lg shadow-slate-200"
+              >
+                <svg className="w-5 h-5 mr-3 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                목록으로 돌아가기
+              </Link>
+            </div>
+          </div>
+        </article>
+      </main>
     </div>
   );
 }

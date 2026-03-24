@@ -20,7 +20,6 @@ export default function Home() {
   const benefits = infoData.filter((item) => item.category === "혜택");
   const allBlogs = getSortedPostsData();
   const recentBlogs = allBlogs.slice(0, 2);
-  const lastUpdated = new Date().toLocaleDateString("ko-KR");
 
   return (
     <div className="min-h-screen bg-pink-50 font-sans text-slate-800">
@@ -85,15 +84,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* 하단 푸터 */}
-      <footer className="bg-slate-100 text-slate-500 py-10 px-4 mt-12 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-2 text-sm">
-          <p>데이터 출처: 공공데이터포털 (data.go.kr)</p>
-          <p>마지막 업데이트: {lastUpdated}</p>
-          <p className="mt-4 text-xs">© 2024 김해시 생활 정보. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -8,16 +8,11 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 text-sm text-center">
         <p>데이터 출처: 공공데이터포털 (data.go.kr)</p>
         
-        {/* 방문자 카운터 (한글 라벨 + 숫자 듀얼 배지) */}
-        <div className="py-2 flex items-center justify-center -space-x-px">
+        {/* 방문자 카운터 - hits.seeyoufarm.com (실제 URL 기반 방문자 카운트) */}
+        <div className="py-2 flex items-center justify-center">
           <img 
-            src="https://img.shields.io/badge/%EB%B0%A9%EB%AC%B8%EC%9E%90%EC%88%98-ff69b4?style=flat-square" 
-            alt="방문자수 라벨"
-            className="h-5"
-          />
-          <img 
-            src="https://komarev.com/ghpvc/?username=gimhaeinfo-2026-v2&color=ec4899&style=flat-square&label=%20" 
-            alt="방문자 숫자"
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgimhaeinfo.com&count_bg=%23EC4899&title_bg=%23FF69B4&icon=&icon_color=%23E7E7E7&title=%EB%B0%A9%EB%AC%B8%EC%9E%90%EC%88%98&edge_flat=true" 
+            alt="방문자 수"
             className="h-5"
           />
         </div>

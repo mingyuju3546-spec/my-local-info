@@ -16,7 +16,7 @@ export default function Footer() {
             className="h-5"
           />
           <img 
-            src="https://komarev.com/ghpvc/?username=gimhaeinfo-final-v1&color=ec4899&style=flat-square&label=%20" 
+            src="https://komarev.com/ghpvc/?username=gimhaeinfo-2026-v2&color=ec4899&style=flat-square&label=%20" 
             alt="방문자 숫자"
             className="h-5"
           />
